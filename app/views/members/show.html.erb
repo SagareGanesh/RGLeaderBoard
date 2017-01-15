@@ -10,5 +10,11 @@
   <%= @member.college %>
 </p>
 
+<p>
+  <strong>Team Name:</strong>
+  <%= Team.find_by_id(@member.team_id).name %>
+</p>
+
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

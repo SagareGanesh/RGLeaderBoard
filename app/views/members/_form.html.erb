@@ -21,6 +21,13 @@
     <%= f.text_field :college %>
   </div>
 
+  
+  <div class="field">
+    <%= f.label :Select_Team %>
+    <%= f.collection_select(:team_id , Team.where(id: @team_id), :id, :name, {:include_blank=>true}) %>
+  </div>
+ 
+
   <div class="actions">
     <%= f.submit %>
   </div>

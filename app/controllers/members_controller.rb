@@ -14,7 +14,13 @@ class MembersController < ApplicationController
 
   # GET /members/new
   def new
-    @member = Member.new
+    @member = Member.new()
+
+    @team_id = params[:team_id]
+    Rails.logger.error("++++++++")
+    Rails.logger.error(params.inspect)
+    Rails.logger.error("++++++++")
+    Rails.logger.error(params[:team_id])
   end
 
   # GET /members/1/edit
@@ -25,7 +31,6 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-
     respond_to do |format|
       if @member.save
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
@@ -69,6 +74,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :college)
+      params.require(:member).permit(:name, :college ,:team_id)
     end
 end

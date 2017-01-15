@@ -15,5 +15,6 @@
   <%= @team.rating %>
 </p>
 
+<%= link_to 'Add Member', "/members/new?team_id=#{@team.id}" %>
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
