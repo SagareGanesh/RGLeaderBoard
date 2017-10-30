@@ -12,7 +12,7 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 set :application_name, 'RGLeaderBoard'
 set :domain, '18.221.158.29'
 set :deploy_to, '/home/ec2-user'
-set :repository, 'git@github.com:SagareGanesh/RGLeaderBoard.git'
+set :repository, 'https://github.com/SagareGanesh/RGLeaderBoard.git'
 set :branch, 'master'
 set :identity_file, 'keys/ganesh-first-app.pem'
 set :user, 'ec2-user'
